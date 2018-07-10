@@ -1,4 +1,12 @@
-# Afm
+# AFM
+
+Angular Faster Master
+
+**Angular最速マスターへの道**
+
+DEMOは[こちら](https://mao-miyaji.github.io/afm/)から
+
+-----
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
