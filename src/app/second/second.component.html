@@ -1,0 +1,88 @@
+<div class="row m-t-20">
+    <div class="col-sm-3">
+        <ul>
+            <li><a class="pointer" (click)="section = 1">NgModel</a></li>
+            <li><a class="pointer" (click)="section = 2">NgIf</a></li>
+            <li><a class="pointer" (click)="section = 3">NgFor</a></li>
+            <li><a class="pointer" (click)="section = 4">Template</a></li>
+        </ul>
+    </div>
+    <div class="col-sm-9">
+        <div>
+            <ng-container [ngSwitch]="section">
+                <ng-container *ngSwitchCase="1">
+                    <!-- ngModel -->
+                    <div class="col-sm-6">
+                        <h3>ngModel</h3>
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="word" [(ngModel)]="word" placeholder="入力してください">
+                            </div>
+                        </form>
+                        <div class="text-center m-t-20">
+                            入力した文字：<br>{{word}}
+                        </div>
+                    </div>
+                </ng-container>
+                <ng-container *ngSwitchCase="2">
+                    <!-- ngIf -->
+                    <div class="col-sm-6">
+                        <h3>ngIf</h3>
+                        <form #nameForm="ngForm">
+                            <div class="form-group">
+                                <label for="name" class="control-label">NAME</label>
+                                <input type="text" class="form-control" id="name" name="name" [(ngModel)]="name" placeholder="name" required>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary" [disabled]="nameForm.invalid" (click)="click()">SUBMIT</button>
+                            </div>
+                        </form>
+                        <div *ngIf="isClicked" class="text-center m-t-20">
+                            初めまして！ {{name}} さん！
+                        </div>
+                    </div>
+                </ng-container>
+                <ng-container *ngSwitchCase="3">
+                    <!-- ngFor -->
+                    <div class="col-sm-6">
+                        <h3>ngFor</h3>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>NAME</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let member of members">
+                                    <td>{{member.id}}</td>
+                                    <td>{{member.name}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </ng-container>
+                <ng-container *ngSwitchCase="4">
+                    <!-- Template -->
+                    <div class="col-sm-6">
+                        <h3>template</h3>
+                        <select name="fruit" class="form-control" [(ngModel)]="selectedFruit">
+                            <option value="">--果物を選んでください--</option>
+                            <option *ngFor="let item of fruits" [value]="item">{{item}}</option>
+                        </select>
+                        <ng-container *ngIf="selectedFruit">
+                            <div *ngIf="selectedFruit == 'strawberry' || selectedFruit == 'apple'; then redFruit; else notRedFruit">
+                                ここは表示されないよ！
+                            </div>
+                            <ng-template #notRedFruit>{{selectedFruit}}は赤い果物ではないです</ng-template>
+                            <ng-template #redFruit>
+                                <span class="text-danger">{{selectedFruit}}は赤い果物です</span>
+                            </ng-template>
+                        </ng-container>
+                    </div>
+                </ng-container>
+                <ng-container *ngSwitchDefault></ng-container>
+            </ng-container>
+        </div>
+    </div>
+</div>
