@@ -1,2 +1,221 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://unpkg.com/bootstrap@4.1.1/dist/css/bootstrap.min.css');
+/**
+ * Helper Class
+ */
+.m-t-0 {
+    margin-top: 0px !important;
+}
+.p-t-0 {
+    padding-top: 0px !important;
+}
+.p-0 {
+    padding: 0px !important;
+}
+.m-b-0 {
+    margin-bottom: 0px !important;
+}
+.p-b-0 {
+    padding-bottom: 0px !important;
+}
+.m-l-0 {
+    margin-left: 0px !important;
+}
+.p-l-0 {
+    padding-left: 0px !important;
+}
+.m-r-0 {
+    margin-right: 0px !important;
+}
+.p-r-0 {
+    padding-right: 0px !important;
+}
+.m-y-0 {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+.p-y-0 {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+.m-x-0 {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+.p-x-0 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+.m-t-5 {
+    margin-top: 5px !important;
+}
+.p-t-5 {
+    padding-top: 5px !important;
+}
+.m-b-5 {
+    margin-bottom: 5px !important;
+}
+.p-b-5 {
+    padding-bottom: 5px !important;
+}
+.m-l-5 {
+    margin-left: 5px !important;
+}
+.p-l-5 {
+    padding-left: 5px !important;
+}
+.m-r-5 {
+    margin-right: 5px !important;
+}
+.p-r-5 {
+    padding-right: 5px !important;
+}
+.m-y-5 {
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+}
+.p-y-5 {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+.m-x-5 {
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+}
+.p-x-5 {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+}
+.m-t-10 {
+    margin-top: 10px !important;
+}
+.p-t-10 {
+    padding-top: 10px !important;
+}
+.m-b-10 {
+    margin-bottom: 10px !important;
+}
+.p-b-10 {
+    padding-bottom: 10px !important;
+}
+.m-l-10 {
+    margin-left: 10px !important;
+}
+.p-l-10 {
+    padding-left: 10px !important;
+}
+.m-r-10 {
+    margin-right: 10px !important;
+}
+.p-r-10 {
+    padding-right: 10px !important;
+}
+.m-y-10 {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+.p-y-10 {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+.m-x-10 {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+}
+.p-x-10 {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+.m-t-15 {
+    margin-top: 15px !important;
+}
+.p-t-15 {
+    padding-top: 15px !important;
+}
+.m-b-15 {
+    margin-bottom: 15px !important;
+}
+.p-b-15 {
+    padding-bottom: 15px !important;
+}
+.m-l-15 {
+    margin-left: 15px !important;
+}
+.p-l-15 {
+    padding-left: 15px !important;
+}
+.m-r-15 {
+    margin-right: 15px !important;
+}
+.p-r-15 {
+    padding-right: 15px !important;
+}
+.m-y-15 {
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+}
+.p-y-15 {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+}
+.m-x-15 {
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+}
+.p-x-15 {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+.m-t-20 {
+    margin-top: 20px !important;
+}
+.p-t-20 {
+    padding-top: 20px !important;
+}
+.m-b-20 {
+    margin-bottom: 20px !important;
+}
+.p-b-20 {
+    padding-bottom: 20px !important;
+}
+.m-l-20 {
+    margin-left: 20px !important;
+}
+.p-l-20 {
+    padding-left: 20px !important;
+}
+.m-r-20 {
+    margin-right: 20px !important;
+}
+.p-r-20 {
+    padding-right: 20px !important;
+}
+.m-y-20 {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+}
+.p-y-20 {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+}
+.m-x-20 {
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+}
+.p-x-20 {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+.text-clipped {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.block {
+    display: block;
+}
+
+.pointer {
+    cursor: pointer;
+}
