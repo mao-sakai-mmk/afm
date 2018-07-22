@@ -1,0 +1,39 @@
+<div class="row m-t-20 m-x-20">
+    <div *ngIf="!start else shoppingList" class="offset-2 col-8">
+        <div class="form-group">
+            <label for="discount_rate" class="control-label">割引率</label>
+            <input type="number" class="form-control" min="0" max="100" id="discount_rate" name="discount_rate" [(ngModel)]="discountRate">
+        </div>
+        <button class="btn btn-success" (click)="startShopping()">start Shopping</button>
+    </div>
+    <ng-template #shoppingList>
+        <div class="col-12 col-sm-6">
+            <app-third-product-list [discountRate]="discountRate" (buy)="buy($event)"></app-third-product-list>
+        </div>
+        <div class="col-12 col-sm-6">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>商品名</th>
+                        <th>個数</th>
+                        <th>売値</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of cart">
+                        <td>{{item.name}}</td>
+                        <td>{{item.count | number}}</td>
+                        <td>{{item.sale_price | number}}</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Total</td>
+                        <td>{{total_count | number}}</td>
+                        <td>{{total_price | number}}</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </ng-template>
+</div>

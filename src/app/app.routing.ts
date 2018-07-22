@@ -16,6 +16,10 @@ const appRoutes: Routes = [
         path: 'second',
         redirectTo: 'second/1'
     },
+    {
+        path: 'third',
+        loadChildren: './third/third.module#ThirdModule'
+    },
     /**
      * 対象がなかった時
      */

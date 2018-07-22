@@ -1,0 +1,10 @@
+<ng-container *ngFor="let item of products">
+    <div class="card m-b-20">
+        <div class="card-body text-center">
+            <h4>{{item.name}}</h4>
+            <small *ngIf="!discountRate">¥{{item.unit_price | number}}</small>
+            <small *ngIf="discountRate">¥{{calcSalePrice(item.unit_price) | number}}</small>
+            <button class="btn btn-primary btn-sm m-l-20" (click)="clickBtn(item)">BUY</button>
+        </div>
+    </div>
+</ng-container>
