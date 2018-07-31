@@ -1,0 +1,22 @@
+<div class="row m-t-20">
+    <div class="offset-sm-3 col-sm-6 col-12">
+        <div>
+            <form>
+                <div class="form-group">
+                    <label for="word" class="control-label">子Componentに渡す値</label>
+                    <input type="text" name="word" id="word" class="form-control" [(ngModel)]="word">
+                </div>
+            </form>
+            <button class="btn btn-success" (click)="displayChild = !displayChild">{{displayChild ? '子Componentを削除' : '子Componentを表示'}}</button>
+        </div>
+        <div class="child-block">
+            <app-forth-child *ngIf="displayChild" [word]="word" (hook)="getLogger($event)"></app-forth-child>
+        </div>
+        <hr>
+        <div class="logger">
+            <small>ログ: </small>
+            <button class="btn btn-outline-danger btn-sm float-right" (click)="resetLogger()">ログ削除</button>
+            <p [innerHTML]="logger"></p>
+        </div>
+    </div>
+</div>

@@ -20,6 +20,10 @@ const appRoutes: Routes = [
         path: 'third',
         loadChildren: './third/third.module#ThirdModule'
     },
+    {
+        path: 'forth',
+        loadChildren: './forth/forth.module#ForthModule'
+    },
     /**
      * 対象がなかった時
      */
