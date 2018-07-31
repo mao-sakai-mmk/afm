@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+
+import { SharedModule } from './shared/shared.module';
 
 import { AppRoutes } from './app.routing';
 import { AppComponent } from './app.component';
@@ -15,7 +16,7 @@ import { SecondComponent } from './second/second.component';
     ],
     imports: [
         BrowserModule,
-        FormsModule,
+        SharedModule,
         AppRoutes
     ],
     providers: [],

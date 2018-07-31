@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+
+import { SharedModule } from '../shared/shared.module';
 
 import { ThirdRoutingModule } from './third-routing.module';
 
@@ -10,8 +10,7 @@ import { ThirdProductListComponent } from './third-product-list/third-product-li
 
 @NgModule({
     imports: [
-        CommonModule,
-        FormsModule,
+        SharedModule,
         ThirdRoutingModule
     ],
     declarations: [
