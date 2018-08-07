@@ -24,6 +24,10 @@ const appRoutes: Routes = [
         path: 'forth',
         loadChildren: './forth/forth.module#ForthModule'
     },
+    {
+        path: 'fifth',
+        loadChildren: './fifth/fifth.module#FifthModule'
+    },
     /**
      * 対象がなかった時
      */

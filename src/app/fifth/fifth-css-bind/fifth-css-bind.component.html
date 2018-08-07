@@ -1,0 +1,49 @@
+<h4>CSS Binding</h4>
+
+<div class="col-md-6">
+    <form>
+        <div class="form-group">
+            <label for="bgColor" class="control-label">背景色</label>
+            <input name="bgColor" id="bgColor" class="form-control" [value]="bgColor" [(colorPicker)]="bgColor">
+        </div>
+        <div class="form-group">
+            <label for="fontSize" class="control-label">文字サイズ(px)</label>
+            <input type="number" name="fontSize" id="fontSize" class="form-control" [(ngModel)]="fontSize" (ngModelChange)="isChanged = true">
+        </div>
+        <div class="form-group">
+            <label for="textAlign" class="control-label">文字位置</label>
+            <select name="textAlign" id="textAlign" class="form-control" [(ngModel)]="textAlign" (ngModelChange)="isChanged = true">
+                <option value="">--選択してください--</option>
+                <option value="left">左寄せ</option>
+                <option value="center">中央寄せ</option>
+                <option value="right">右寄せ</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="boxStyle" class="control-label">BOXサイズ</label>
+            <div class="row">
+                <label for="height" class="control-label text-right p-t-5 col-3">高さ(px)</label>
+                <div class="col-9">
+                    <input type="number" name="height" id="height" class="form-control" [(ngModel)]="boxStyle['height.px']">
+                </div>
+                <label for="width" class="control-label text-right p-t-5 col-3">幅(px)</label>
+                <div class="col-9">
+                    <input type="number" name="width" id="width" class="form-control" [(ngModel)]="boxStyle['width.px']">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<hr>
+<div class="col-sm-12">
+    <div class="result" [style.background]="bgColor">
+        <h5>結果：</h5>
+        <p [ngStyle]="{'font-size.px': fontSize}" [ngClass]="textClass()">
+            指定されたCSSが適用されます！
+        </p>
+        <p [ngClass]="{'display-none': !isChanged}">文字に関わるCSSが変更されました！</p>
+        <div class="text-center" [style.lineHeight.px]="boxStyle['height.px']" [ngStyle]="boxStyle">
+            BOX
+        </div>
+    </div>
+</div>

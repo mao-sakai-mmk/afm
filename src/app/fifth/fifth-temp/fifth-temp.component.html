@@ -1,0 +1,55 @@
+<h4>NgTemplateOutlet</h4>
+
+<div class="row">
+    <div class="offset-md-3 col-md-6">
+        <p>自己紹介カード表示例）</p>
+        <ng-container *ngTemplateOutlet="profileCard; context: {$implicit: myProfile}"></ng-container>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-sm-6 m-b-20">
+        <h5>入力フォーム</h5>
+        <form>
+            <div class="form-group">
+                <label for="name" class="control-label">名前</label>
+                <input type="text" name="name" id="name" class="form-control" [(ngModel)]="formProfile.name">
+            </div>
+            <div class="form-group">
+                <label for="company" class="control-label">会社名</label>
+                <input type="text" name="company" id="company" class="form-control" [(ngModel)]="formProfile.company">
+            </div>
+            <div class="form-group">
+                <label for="introduce" class="control-label">自己紹介</label>
+                <textarea name="introduce" id="introduce" rows="3" class="form-control" [(ngModel)]="formProfile.introduce"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="other" class="control-label">その他</label>
+                <textarea #otherData name="other" id="other" rows="3" class="form-control" placeholder="自由に記入してください"></textarea>
+            </div>
+            <button mat-raised-button color="primary" (click)="preview()">プレビュー</button>
+        </form>
+    </div>
+    <div class="col-sm-6">
+        <h5>表示プレビュー</h5>
+        <ng-container *ngIf="yourProfile">
+            <ng-container *ngTemplateOutlet="profileCard; context: {$implicit: yourProfile, other: otherData.value}"></ng-container>
+        </ng-container>
+    </div>
+</div>
+
+<ng-template #profileCard let-profile let-other="other">
+    <mat-card color="accent">
+        <mat-card-header>
+            <mat-card-title>{{profile?.name}}</mat-card-title>
+            <mat-card-subtitle>{{profile?.company}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p [innerHTML]="profile?.introduce" class="wspace-preline"></p>
+            <p *ngIf="other" [innerHTML]="other" class="wspace-preline"></p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button color="warn" (click)="profile.addLike()"><mat-icon>favorite</mat-icon> {{profile?.like}}</button>
+        </mat-card-actions>
+    </mat-card>
+</ng-template>
