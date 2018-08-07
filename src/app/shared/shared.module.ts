@@ -2,6 +2,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
+import { ColorPickerModule } from 'ngx-color-picker';
+
+import { MaterialModule } from './material/material.module';
+
 @NgModule({
     imports: [
         CommonModule
@@ -10,7 +14,9 @@ import { CommonModule } from '@angular/common';
     ],
     exports: [
         CommonModule,
-        FormsModule
+        FormsModule,
+        MaterialModule,
+        ColorPickerModule
     ]
 })
 export class SharedModule { }
