@@ -28,6 +28,10 @@ const appRoutes: Routes = [
         path: 'fifth',
         loadChildren: './fifth/fifth.module#FifthModule'
     },
+    {
+        path: 'sixth',
+        loadChildren: './sixth/sixth.module#SixthModule'
+    },
     /**
      * 対象がなかった時
      */
