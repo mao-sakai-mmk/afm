@@ -1,0 +1,13 @@
+<mat-sidenav-container>
+    <mat-sidenav mode="side" opened [style.min-width.px]="200">
+        <mat-nav-list>
+            <a mat-list-item [routerLink]="['/sixth/message']">メッセージの送受信</a>
+            <a mat-list-item [routerLink]="['/sixth/api']">HTTPリクエスト</a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content [style.height.vh]="100">
+        <div class="p-y-20 p-x-20">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

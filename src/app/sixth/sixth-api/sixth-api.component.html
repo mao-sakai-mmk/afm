@@ -1,0 +1,58 @@
+<h4>HTTPリクエスト</h4>
+
+<div class="row">
+    <div class="col-md-8">
+        <form #searchForm="ngForm">
+            <h5>GitHub リポジトリ検索</h5>
+            <mat-form-field class="full-width">
+                <input matInput placeholder="キーワード" name="keyword" [(ngModel)]="keyword" required>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-select placeholder="言語" name="language" [(ngModel)]="optionData.language">
+                    <mat-option value=""></mat-option>
+                    <mat-option *ngFor="let language of languages" [value]="language">
+                        {{language}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-select placeholder="ソート" name="sort" [(ngModel)]="optionData.sort">
+                    <mat-option value=""></mat-option>
+                    <mat-option *ngFor="let sort of sorts" [value]="sort.value">
+                        {{sort.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-select placeholder="昇順or降順" name="order" [(ngModel)]="optionData.order">
+                    <mat-option *ngFor="let order of orders" [value]="order.value">
+                        {{order.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button mat-raised-button color="primary" [disabled]="searchForm.invalid" (click)="search()">検索</button>
+        </form>
+    </div>
+    <div class="col-md-12">
+        <hr>
+    </div>
+    <div class="col-md-8">
+        <h5>検索結果: {{total | number}}件</h5>
+        <ng-container *ngFor="let item of repositories">
+            <mat-card class="m-b-20">
+                <mat-card-header>
+                    <div mat-card-avatar [ngStyle]="{'background-size': 'cover', 'background-image': 'url('+ item.owner.avatar_url + ')'}"></div>
+                    <mat-card-title>
+                        <h5><a [href]="item.html_url">{{item.full_name}}</a></h5>
+                    </mat-card-title>
+                    <mat-card-subtitle>{{item.language}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>{{item.description}}</p>
+                    <small>Update: {{item.updated_at | date}}</small>
+                </mat-card-content>
+            </mat-card>
+        </ng-container>
+    </div>
+</div>
+

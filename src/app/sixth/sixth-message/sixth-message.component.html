@@ -1,0 +1,22 @@
+<h4>メッセージの送受信</h4>
+
+<div class="phone-block m-t-20">
+    <div class="display">
+        <div #messageBlock class="messages">
+            <div *ngFor="let mes of messages; let last = last" class="m-x-10" [ngClass]="{'my-message text-right': mes.isMy, 'your-message': !mes.isMy, 'm-b-10': !last}">
+                <span>{{mes.text}}</span>
+            </div>
+        </div>
+        <div class="send-form">
+            <form #sendForm="ngForm">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="message" [(ngModel)]="formMessage" required>
+                    <div class="input-group-append">
+                        <button mat-flat-button color="primary" [disabled]="sendForm.invalid" (click)="send()">送信</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="block-btn"></div>
+</div>
