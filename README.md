@@ -10,12 +10,12 @@ Angular Faster Master
 
 | 章No. | 概要 | DEMOページ |
 | :--- | :--- | :--- |
-| 1 | プロジェクト作成から表示させるまで | [DEMO](https://mao-miyaji.github.io/afm/) |
+| 1 | プロジェクト作成から表示させるまで | [DEMO](https://mao-miyaji.github.io/afm/hello) |
 | 2 | Form / Direcive / Template | [DEMO](https://mao-miyaji.github.io/afm/second/1) |
 | 3 | ModuleとRouting / Componentの親子関係 | [DEMO](https://mao-miyaji.github.io/afm/third/shopping) |
 | 4 | SharedModule / Lifecycle Hooks | [DEMO](https://mao-miyaji.github.io/afm/forth) |
 | 5 | NgTemplateOutlet / CSS Binding | [DEMO](https://mao-miyaji.github.io/afm/fifth) |
-| 6 | Service | [DEMO](https://mao-miyaji.github.io/afm/sixth) |
+| 6 | Service | [DEMO](https://mao-miyaji.github.io/afm/sixth/message) |
 
 -----
 
