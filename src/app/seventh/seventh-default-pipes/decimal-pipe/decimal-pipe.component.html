@@ -1,0 +1,27 @@
+<h4>DecimalPipe</h4>
+
+<div class="decimalpipe-block">
+    <p class="m-t-20 m-b-0">円周率: {{ pi }}</p>
+    <p class="m-t-20 m-b-0">金額: {{ price }}</p>
+    <div>
+        <span>{{ Number | number:'</span>
+        <mat-form-field [style.width.px]="50">
+            <input matInput type="number" class="text-center" name="minIntegerDigits" [(ngModel)]="decimalData.minIntegerDigits" required>
+        </mat-form-field>
+        <span>.</span>
+        <mat-form-field [style.width.px]="50">
+            <input matInput type="number" class="text-center" name="minFractionDigits" [(ngModel)]="decimalData.minFractionDigits" required>
+        </mat-form-field>
+        <span>-</span>
+        <mat-form-field [style.width.px]="50">
+            <input matInput type="number" class="text-center" name="maxFractionDigits" [(ngModel)]="decimalData.maxFractionDigits" required>
+        </mat-form-field>
+        <span>' }}</span>
+    </div>
+    <p>
+        => 結果: 円周率 <span class="text-success">{{ pi | number:digitsInfo }}</span>
+    </p>
+    <p>
+        => 結果: 金額 <span class="text-success">{{ price | number:digitsInfo }} 円</span>
+    </p>
+</div>
