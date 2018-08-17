@@ -1,0 +1,21 @@
+<h4>DatePipe</h4>
+
+<div class="datepipe-block">
+    <div>
+        <span>{{ Date | date</span>
+        <mat-form-field [style.min-width.px]="300">
+            <mat-select name="format" [(ngModel)]="selectedFormat">
+                <mat-option value=""></mat-option>
+                <mat-option *ngFor="let format of formats" [value]="format">
+                    :'{{ format }}'
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <span> }}</span>
+    </div>
+    <p>
+        => 
+        <span class="text-success" *ngIf="selectedFormat">{{ now | date:selectedFormat }}</span>
+        <span class="text-success" *ngIf="!selectedFormat">{{ now | date }}</span>
+    </p>
+</div>

@@ -1,0 +1,10 @@
+<h4>LowerCasePipe / UpperCasePipe / TitleCasePipe</h4>
+
+<div class="text-trans-pipe-block">
+    <mat-form-field>
+        <input matInput type="text" name="text" [(ngModel)]="text" required>
+    </mat-form-field>
+    <p>{{ <span>String</span> | lowercase }} => 結果: <span class="text-success">{{ text | lowercase }}</span></p>
+    <p>{{ <span>String</span> | uppercase }} => 結果: <span class="text-success">{{ text | uppercase }}</span></p>
+    <p>{{ <span>String</span> | titlecase }} => 結果: <span class="text-success">{{ text | titlecase }}</span></p>
+</div>

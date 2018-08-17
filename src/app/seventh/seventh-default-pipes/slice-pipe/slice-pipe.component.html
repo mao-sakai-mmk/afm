@@ -1,0 +1,25 @@
+<h4>SlicePipe</h4>
+
+<div class="slicepipe-block">
+    <p class="m-t-20 m-b-0">文字列 アルファベット: {{ alphabets }}</p>
+    <p class="m-y-20 m-b-0">
+        配列 スライスといえば: {{ sliceArrs | json }}
+        <small [style.text-decoration]="'line-through'">(いや、後半関係ない)</small>
+    </p>
+    <mat-form-field>
+        <input matInput type="number" name="start" placeholder="開始位置" [(ngModel)]="sliceData.start" required>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput type="number" name="end" placeholder="終了位置" [(ngModel)]="sliceData.end">
+    </mat-form-field>
+    <ng-container *ngTemplateOutlet="sliceTemp; context: {$implicit: alphabets, label: 'アルファベット'}"></ng-container>
+    <ng-container *ngTemplateOutlet="sliceTemp; context: {$implicit: sliceArrs, label: 'スライスといえば'}"></ng-container>
+    <ng-template #sliceTemp let-target let-label="label">
+        <p>
+            {{ <span>{{ label }}</span> | slice: <span>{{ sliceData.start }}</span><span *ngIf="sliceData.end != undefined">:{{ sliceData.end }}</span> }} 
+            => 結果: 
+            <span *ngIf="sliceData.end != undefined" class="text-success">{{ target | slice:sliceData.start:sliceData.end }}</span>
+            <span *ngIf="sliceData.end == undefined" class="text-success">{{ target | slice:sliceData.start }}</span>
+        </p>
+    </ng-template>
+</div>

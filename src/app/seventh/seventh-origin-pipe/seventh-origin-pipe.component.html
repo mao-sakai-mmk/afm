@@ -1,0 +1,27 @@
+<h4>オリジナル Pipe</h4>
+
+<div>
+    <h5 class="m-t-20">税込表示Pipe</h5>
+    <mat-form-field>
+        <input matInput type="number" name="price" placeholder="金額" [(ngModel)]="price" required>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-select name="method" placeholder="計算方法" [(ngModel)]="selectedMethod">
+            <mat-option value=""></mat-option>
+            <mat-option *ngFor="let method of methods" [value]="method.value">
+                {{method.label}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput type="number" name="taxRate" placeholder="消費税率" [(ngModel)]="taxRate" required>
+    </mat-form-field>
+
+    <div class="m-t-20">
+        <p class="code">コード：{{ 金額 | tax:<span>計算方法</span>:<span>消費税率</span> | number }}</p>
+        <p *ngIf="price else noPrice" class="text-success">
+            税込 {{ price | tax:selectedMethod:taxRate | number }} 円です！
+        </p>
+        <ng-template #noPrice>金額が設定されていません。</ng-template>
+    </div>
+</div>
