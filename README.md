@@ -16,6 +16,8 @@ Angular Faster Master
 | 4 | SharedModule / Lifecycle Hooks | [DEMO](https://mao-miyaji.github.io/afm/forth) |
 | 5 | NgTemplateOutlet / CSS Binding | [DEMO](https://mao-miyaji.github.io/afm/fifth) |
 | 6 | Service | [DEMO](https://mao-miyaji.github.io/afm/sixth/message) |
+| 7 | Pipe | [DEMO](https://mao-miyaji.github.io/afm/seventh/date) |
+| 8 | HostBinding / HostListener / Animations | [DEMO](https://mao-miyaji.github.io/afm/eighth) |
 
 -----
 

@@ -1,0 +1,15 @@
+<h4>Animations</h4>
+
+<mat-card>
+    <mat-card-content [@fade]="fade" [@size]="size" [@bound]="bound" [@rough]="rough">
+        <div class="mm-block">
+            <div class="face"></div>
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button (click)="toggleFade()">{{fade == 'fadeIn' ? 'fadeOut' : 'fadeIn'}}</button>
+        <button mat-raised-button (click)="sizeChange()">{{size == 'resize' ? 'sizeUp' : 'resize'}}</button>
+        <button mat-raised-button [color]="bound ? 'primary' : ''" (click)="toggleBound()">bound</button>
+        <button mat-raised-button [color]="rough ? 'primary' : ''" (click)="toggleRough()">rough</button>
+    </mat-card-actions>
+</mat-card>

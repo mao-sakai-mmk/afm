@@ -1,0 +1,14 @@
+<h4>HostListener</h4>
+
+<mat-card>
+    <mat-form-field class="full-width">
+        <input matInput appHostListenInput type="string" name="text" placeholder="文字を入力してください" [(ngModel)]="text" (log)="addLogger($event)">
+    </mat-form-field>
+</mat-card>
+<hr>
+<div class="log">
+    <button mat-raised-button color="accent" (click)="resetLogger()">ログリセット</button>
+    <div class="m-t-20">
+        <p *ngFor="let item of logger" class="text-success m-b-0">{{item}}</p>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<h4>HostBinding</h4>
+
+<div class="row">
+    <div class="col-md-6">
+        <mat-form-field class="full-width">
+            <mat-select name="display" placeholder="style.display" [(ngModel)]="display">
+                <mat-option value="block">block</mat-option>
+                <mat-option value="none">none</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <input matInput type="number" name="fontSize" placeholder="style.fontSize" [(ngModel)]="fontSize">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <input matInput type="number" name="height" placeholder="style.height" [(ngModel)]="height">
+        </mat-form-field>
+        <mat-slide-toggle color="primary" [(ngModel)]="nightMode">Night Mode</mat-slide-toggle>
+    </div>
+</div>
+<hr>
+<div class="child-component">
+    <app-host-bind-child [display]="display" [fontSize]="fontSize" [height]="height" [nightMode]="nightMode"></app-host-bind-child>
+</div>
