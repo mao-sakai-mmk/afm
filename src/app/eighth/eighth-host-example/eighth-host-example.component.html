@@ -1,0 +1,6 @@
+<h4>HostBinding / HostListener おまけ</h4>
+
+<p>DirectiveにHostBinding / HostListenerを適用</p>
+<img src="{{avatorUrl ? avatorUrl : 'favicon.ico'}}" class="rounded-circle img-thumbnail custom-thumbnail">
+<input #fileInput appAvatorSelect (changePath)="avatorUrl = $event">
+<button mat-raised-button class="m-l-20" (click)="fileInput.click()">画像を選択する</button>
