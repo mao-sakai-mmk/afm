@@ -1,0 +1,66 @@
+<h4>v7.0 <small class="text-secondary m-l-15">Release: {{releaseDate | date:'mediumDate' }}</small></h4>
+
+<div class="m-y-20">
+    <h4>Virtual Scrolling</h4>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Quiz</mat-card-title>
+            <mat-card-subtitle>次の1000個の名前の中から{{ herName }}をみつけてクリックせよ！</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <cdk-virtual-scroll-viewport #vs [itemSize]="itemSize" class="name-box">
+                <div *cdkVirtualFor="let name of names; let i = index" [ngStyle]="{'height.px': itemSize, 'line-height.px': itemSize}" class="name-box-item" [ngClass]="{'result': isFinishQ1 && mmIndex == i}" (click)="selectName(i)">{{ i }}: {{ name }}</div>
+            </cdk-virtual-scroll-viewport>
+            <div *ngIf="isFinishQ1" class="m-t-20">
+                <span *ngIf="checkName()" class="text-success">正解です！</span>
+                <span *ngIf="!checkName()" class="text-danger">間違ってます。。。</span>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+<hr>
+<div class="m-y-20">
+    <h4>Drag and Drop</h4>
+
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Quiz</mat-card-title>
+            <mat-card-subtitle>次の映画10作品を公開年ごとに2000年より前と2000年以降に分類せよ！</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="m-y-10">2000年より前</h5>
+                    <div cdkDropList #c20List="cdkDropList" class="movie-list" [cdkDropListData]="c20Movies" [cdkDropListConnectedTo]="[c21List]" (cdkDropListDropped)="dropMovie($event)">
+                        <div cdkDrag *ngFor="let movie of c20Movies" class="movie-list-item">
+                            {{ movie.title }} 
+                            <small class="text-secondary">{{ movie.english_title }}</small>
+                            <small *ngIf="isFinishQ2" class="float-right text-info">{{ movie.release_date | date:'yyyy年MM月dd日' }}</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="m-y-10">2000年以降</h5>
+                    <div cdkDropList #c21List="cdkDropList" class="movie-list" [cdkDropListData]="c21Movies" [cdkDropListConnectedTo]="[c20List]" (cdkDropListDropped)="dropMovie($event)">
+                        <div cdkDrag *ngFor="let movie of c21Movies" class="movie-list-item">
+                            {{ movie.title }} 
+                            <small class="text-secondary">{{ movie.english_title }}</small>
+                            <small *ngIf="isFinishQ2" class="float-right text-info">{{ movie.release_date | date:'yyyy年MM月dd日' }}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions class="text-right" [ngStyle]="{'border-top': '1px solid #eee'}">
+            <ng-container *ngIf="isFinishQ2">
+                <span *ngIf="checkMovie()" class="text-success">正解です！</span>
+                <span *ngIf="!checkMovie()" class="text-danger">間違ってます。。。</span>
+            </ng-container>
+            <button mat-raised-button color="primary" (click)="isFinishQ2 = true">答え合わせ</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+
+<!-- <cdk-virtual-scroll-viewport [itemSize]="itemSize" [ngStyle]="{'height.px': 200}">
+    <div *cdkVirtualFor="let user of users" [ngStyle]="{'height.px': itemSize}">{{user}}</div>
+</cdk-virtual-scroll-viewport> -->

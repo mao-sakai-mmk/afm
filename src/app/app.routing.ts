@@ -40,6 +40,10 @@ const appRoutes: Routes = [
         path: 'eighth',
         loadChildren: './eighth/eighth.module#EighthModule'
     },
+    {
+        path: 'release',
+        loadChildren: './release/release.module#ReleaseModule',
+    },
     /**
      * 対象がなかった時
      */

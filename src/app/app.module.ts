@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { NgModule, DoBootstrap, ApplicationRef } from '@angular/core';
 
 import { SharedModule } from './shared/shared.module';
 
@@ -24,6 +24,11 @@ import { SecondComponent } from './second/second.component';
         AppRoutes
     ],
     providers: [],
-    bootstrap: [AppComponent]
+    entryComponents: [AppComponent]
 })
-export class AppModule { }
+
+export class AppModule implements DoBootstrap {
+    ngDoBootstrap(appRef: ApplicationRef): void {
+        appRef.bootstrap(AppComponent);
+    }
+}
