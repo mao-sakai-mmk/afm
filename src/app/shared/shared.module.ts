@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { ColorPickerModule } from 'ngx-color-picker';
 
 import { MaterialModule } from './material/material.module';
+import { CdkModule } from './cdk/cdk.module';
 
 @NgModule({
     imports: [
@@ -16,6 +17,7 @@ import { MaterialModule } from './material/material.module';
         CommonModule,
         FormsModule,
         MaterialModule,
+        CdkModule,
         ColorPickerModule
     ]
 })

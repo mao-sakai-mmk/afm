@@ -1,0 +1,31 @@
+.name-box {
+    height: 280px;
+    border: 1px solid #847f7f;
+}
+.name-box-item {
+    padding: 0 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+.name-box-item.result {
+    background: #7031bd;
+    color: white;
+}
+.movie-list {
+    height: 500px;
+}
+.movie-list-item {
+    cursor: move;
+    height: 50px;
+    border: 1px solid #eee;
+    line-height: 50px;
+    padding: 0 10px;
+    background: white;
+}
+.cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
